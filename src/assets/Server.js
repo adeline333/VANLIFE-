@@ -3,7 +3,7 @@ import { createServer, Model } from "miragejs"
 
 createServer({
     models: {
-        van: Model,
+        vans: Model,
     },
 
     seeds(server) {
@@ -24,7 +24,7 @@ createServer({
 
         
         this.get("/vans/:id", (schema, request) => {
-            const id = request.params.id
+            let id = request.params.id
             return schema.vans.find(id)
         })
     }
