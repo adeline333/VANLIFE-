@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
-import Vans from "./pages/Vans"
+import Vans from "./pages/vans/Vans"
 import "./assets/Server"
-import VanDetail from './pages/VanDetail';
+import VanDetail from './pages/vans/VanDetail';
 import Layout from './components/Layout'
-
+import Dashboard from './pages/host/Dashboard'
+import Income from './pages/host/Income';
+import Review from "./pages/host/Review"
+import HostLayout from "./components/HostLayout"
 import "./assets/Server"
+
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -16,11 +21,17 @@ export default function App() {
         <Route element={<Layout/>} >
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+
+        
         <Route path="/vans" element={<Vans />} />
         <Route path="/vans/:id" element={<VanDetail/>}/>
-        <Route path="/host" element={<Dashboard/>}> </Route>
-        <Route path="/host/income" element={</>}> </Route>
-        <Route path="/host/reviews" element={</>}> </Route>
+       
+        <Route path="host" element={<HostLayout/>}> 
+        <Route index element={<Dashboard/>}> </Route>
+
+        <Route path="income" element={<Income/>}> </Route>
+        <Route path="reviews" element={<Review/>}> </Route>
+        </Route>
         </Route>
       </Routes>
     </BrowserRouter>
