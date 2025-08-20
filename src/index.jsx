@@ -16,7 +16,7 @@ import HostVanDetail from './pages/host/HostVanDetail';
 import HostVanInfo from './pages/host/HostVanInfo';
 import HostVanPhotos from './pages/host/HostVanPhotos';
 import HostVanPricing from './pages/host/HostVanPricing';
-
+import Notfound from './pages/Notfound';
 import "./assets/Server"
 
 
@@ -44,6 +44,7 @@ export default function App() {
              </Route>
 
           </Route>
+            <Route path="*" element={<Notfound/>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
