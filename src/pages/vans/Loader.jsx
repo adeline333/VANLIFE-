@@ -1,4 +1,4 @@
-// vansLoader.js
+
 import { getVans } from "./API";
 
 export async function loader() {
