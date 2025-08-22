@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useSearchParams, useLoaderData } from "react-router-dom";
 
 export default function Vans() {
-    const vans = useLoaderData();  // data comes from loader
+    const vans = useLoaderData();  
     const [searchParams, setSearchParams] = useSearchParams();
     const typeFilter = searchParams.get("type");
 
