@@ -31,7 +31,8 @@ import HostVanPricing from './pages/host/HostVanPricing';
 import Notfound from './pages/Notfound';
 import Error from './components/Error';
 import "./assets/Server"
-import Login, {loader as loginLoader} from './pages/Login';
+import Login from './pages/Login';
+import {loader as loginLoader, action as loginAction} from "./pages/LoginFiles"
 import { requireAuth } from './utils';
 
 const router=createBrowserRouter(createRoutesFromElements( 
@@ -42,6 +43,7 @@ const router=createBrowserRouter(createRoutesFromElements(
       path="/login"
       element={<Login />}
         loader={loginLoader}
+        action={loginAction}
     />
           <Route path="vans" element={<Vans />} loader={vansLoader} 
            />
@@ -57,7 +59,7 @@ const router=createBrowserRouter(createRoutesFromElements(
               }}
               errorElement={<Error />}
               />
-
+ 
             <Route path="income"
              element={<Income />}
               loader={async()=>{
