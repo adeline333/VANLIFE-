@@ -1,6 +1,7 @@
 import React from "react"
 import { useLoaderData, Link, Outlet, NavLink } from "react-router-dom"
 
+
 export default function HostVanDetail() {
      const currentVan = useLoaderData()
 
