@@ -53,8 +53,8 @@ const router=createBrowserRouter(createRoutesFromElements(
           <Route path="host" element={<HostLayout />}>
             <Route index
              element={<Dashboard />}
-              loader={async()=>{
-                return await requireAuth()
+              loader={async({request})=>{
+                return await requireAuth({request})
                 
               }}
               errorElement={<Error />}
@@ -62,14 +62,14 @@ const router=createBrowserRouter(createRoutesFromElements(
  
             <Route path="income"
              element={<Income />}
-              loader={async()=>{
-                return await requireAuth()
+              loader={async({request})=>{
+                return await requireAuth({request})
                 
               }}/>
             <Route path="reviews"
              element={<Review />}
-              loader={async()=>{
-                return await requireAuth()
+              loader={async({request})=>{
+                return await requireAuth({request})
                 
               }}/>
 
@@ -85,21 +85,21 @@ const router=createBrowserRouter(createRoutesFromElements(
              loader={hostVanDetailLoader}>
               
             <Route index element={<HostVanInfo/>}
-             loader={async()=>{
-                return await requireAuth()
+             loader={async({request})=>{
+                return await requireAuth({request})
                 
               }}/>
             <Route path="pricing"
              element={<HostVanPricing/>}
-              loader={async()=>{
-                return await requireAuth()
+              loader={async({request})=>{
+                return await requireAuth({request})
                 
               }}/>
             <Route path="photos"
              element={<HostVanPhotos/>}
 
-              loader={async()=>{
-                return await requireAuth()
+              loader={async({request})=>{
+                return await requireAuth({request})
                 
               }}/>
 
